@@ -24,5 +24,5 @@ form.addEventListener('submit', function (event) {
     // Save form data to localStorage to share across pages
     localStorage.setItem('resumeData', JSON.stringify(formData));
     // Redirect to a new page to display the resume
-    window.location.href = 'resumeOutput.html'; // Change to the output page
+    window.location.href = 'index1.html'; // Change to the output page
 });
