@@ -1,17 +1,4 @@
 // dynamicScript.ts
-// Populate form fields if data exists
-window.onload = function () {
-    var storedData = JSON.parse(localStorage.getItem('resumeData') || '{}');
-    if (storedData) {
-        document.getElementById('name').value = storedData.name || '';
-        document.getElementById('contact').value = storedData.contact || '';
-        document.getElementById('email').value = storedData.email || '';
-        document.getElementById('about').value = storedData.about || '';
-        document.getElementById('education').value = storedData.education || '';
-        document.getElementById('skills').value = storedData.skills || '';
-        document.getElementById('experience').value = storedData.experience || '';
-    }
-};
 // Get the form and listen for the submit event
 var form = document.querySelector('form');
 form.addEventListener('submit', function (event) {

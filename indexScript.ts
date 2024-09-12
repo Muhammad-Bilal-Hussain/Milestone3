@@ -1,19 +1,5 @@
 // dynamicScript.ts
 
-// Populate form fields if data exists
-window.onload = () => {
-  const storedData = JSON.parse(localStorage.getItem('resumeData') || '{}');
-  if (storedData) {
-    (document.getElementById('name') as HTMLInputElement).value = storedData.name || '';
-    (document.getElementById('contact') as HTMLInputElement).value = storedData.contact || '';
-    (document.getElementById('email') as HTMLInputElement).value = storedData.email || '';
-    (document.getElementById('about')as HTMLInputElement).value = storedData.about || '';
-    (document.getElementById('education') as HTMLTextAreaElement).value = storedData.education || '';
-    (document.getElementById('skills') as HTMLTextAreaElement).value = storedData.skills || '';
-    (document.getElementById('experience') as HTMLTextAreaElement).value = storedData.experience || '';
-  }
-};
-
 // Get the form and listen for the submit event
 const form = document.querySelector('form') as HTMLFormElement;
 
