@@ -75,7 +75,8 @@ input::placeholder {
   button:hover {
     box-shadow: 7px 7px 20px #848485, -0px -0px 20px rgb(83, 79, 79);
   }  
-.resumeoutput{
+  /* output resume  */
+/* .resumeoutput{
     margin: 1%;
     width: 80%;
     height: auto;
@@ -91,16 +92,10 @@ input::placeholder {
  color: black;
 }
 #resumeContent{
-    max-width: 100%; /* Container ke width ke hisaab se text box ki maximum width set kare */
-    width: 100%; /* Full width le lega apne parent container ki */
-    box-sizing: border-box; /* Padding aur border ko width mein include kare */
-    overflow: hidden; /* Agar content bahar jaaye, toh usse chhupa de */
+    max-width: 100%; /* Container ke width ke hisaab se text box ki maximum width set kare 
+    width: 100%;  Full width le lega apne parent container ki 
+    box-sizing: border-box;  Padding aur border ko width mein include kare 
+    overflow: hidden;  Agar content bahar jaaye, toh usse chhupa de 
     text-align: center;
-}
-/* ruseme jo generate hoga uski heading  */
-.resumeheading{
-background-color: black;
-color: white;
-border-radius: 20px;
-text-align: center;
-}
+}*/
+
