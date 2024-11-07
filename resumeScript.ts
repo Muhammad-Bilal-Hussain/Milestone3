@@ -6,6 +6,7 @@ const resumeData: {
   about: string;
   education: string;
   skills: string;
+  language: string;
   experience: string;
 } = JSON.parse(localStorage.getItem('resumeData') || '{}');
 
@@ -16,12 +17,21 @@ function getElementById<T extends HTMLElement>(id: string): T {
   return element as T;
 }
 
+// Retrieve the image data URL from localStorage
+const imageDataURL = localStorage.getItem('selectedImage');
+const displayImage = document.getElementById('displayImage') as HTMLImageElement;
+
+if (imageDataURL) {
+    displayImage.src = imageDataURL;
+    displayImage.style.display = 'block'; // Make image visible
+}
+
+
 // Display data in respective HTML elements
 getElementById<HTMLHeadingElement>('displayName').textContent = resumeData.name;
 getElementById<HTMLParagraphElement>('displayContact').textContent = "Contact: " + resumeData.contact;
 getElementById<HTMLParagraphElement>('displayEmail').textContent = "Email: " + resumeData.email;
 getElementById<HTMLParagraphElement>('displayAbout').textContent = resumeData.about;
-// getElementById<HTMLParagraphElement>('displaySkils').textContent = resumeData.skills;
 
 // Education section: show each entry in a styled format
 const educationContainer = getElementById<HTMLDivElement>('displayEducation');
@@ -31,15 +41,27 @@ resumeData.education.split('\n').forEach((edu: string) => {
   eduElement.innerHTML = edu + "<hr>";
   educationContainer.appendChild(eduElement);
 });
-// skills section: show each entry in a styled format
-const skillContainer = getElementById<HTMLDivElement>('displaySkils');
-resumeData.skills.split('\n').forEach((skl: string) => {
-  const skillElement = document.createElement('p');
-  skillElement.style.textAlign = 'left';
-  skillElement.innerHTML = skl + "<hr>";
+// Skills section: show each entry in a styled format if present
+const skillContainer = getElementById<HTMLUListElement>('displaySkillsContainer');
+
+// Get non-empty skills, then add them with <hr> only between entries
+const skills = resumeData.skills.split('\n').forEach((skl: string) => {
+  const skillElement = document.createElement('li');
+  skillElement.innerHTML = skl.trim();
+  // skillElement.outerText = skl.trim();
   skillContainer.appendChild(skillElement);
 });
-// Education section: show each entry in a styled format
+// Language section: show each entry in a styled format if present
+const languageContainer = getElementById<HTMLUListElement>('displayLanguageContainer');
+
+// Get non-empty skills, then add them with <hr> only between entries
+const language = resumeData.language.split('\n').forEach((lan: string) => {
+  const languageElement = document.createElement('li');
+  languageElement.innerHTML = lan.trim();
+  languageContainer.appendChild(languageElement);
+});
+
+// Experience section: show each entry in a styled format
 const expContainer = getElementById<HTMLDivElement>('displayExperience');
 resumeData.experience.split('\n').forEach((exp: string) => {
   const expElement = document.createElement('p');
@@ -48,4 +70,3 @@ resumeData.experience.split('\n').forEach((exp: string) => {
   expContainer.appendChild(expElement);
 });
 
-// getElementById<HTMLParagraphElement>('displayExperience').textContent = resumeData.experience;

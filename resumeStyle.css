@@ -6,45 +6,78 @@ body {
     display: flex;
     justify-content: center;
 }
-#displayEducation {
-    text-align: left !important;
-    /* padding-left: 20px; */
-}
 .resume-container {
     background-color: #fff;
     padding: 20px;
     width: 70%;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
-
+p{
+    margin-left: 10px;
+}
 /* Centered Name */
 header {
-    text-align: center;
-    border-bottom: 2px solid #ccc;
-    padding-bottom: 10px;
+    display: flex;
+    align-content: center;
+    border-bottom: 4px solid #a31919;
 }
-
 h1 {
-    margin: 0;
-    font-size: 2em;
+    border-right-width: -10px;
+    position: relative;
+    margin-left: 30px;
+    font-size: 3em;
     color: #2c3e50;
 }
+/* name ki nichy underline  */
+h1::after{
+    display: flex;
+    top: 60px;
+    content: '';
+    position: absolute;
+    width: 75%;
+    height: 5px;
+    left: 0;
+    bottom: 0;
+    background-color: #a31919;
+}
 
+#displayImage{
+    margin-left: 50px;
+    margin-bottom: 10px;
+}
+.imgdiv{
+    border-left: 4px solid #a31919;
+    width: 338px;
+    display: flex;
+    color: #ffffff;
+    background-color:  rgb(183, 3, 3);
+}
 /* Flexbox layout for main content */
 .content {
     display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
 }
-
 /* Left and Right sections */
-.left-section, .right-section {
-    width: 45%;
+.right-section {
+    width: 72%;
+    border-left: 4px solid #a31919;
+    margin-left: 10px;
 }
-
+.left-section{
+    background-color: rgb(183, 3, 3);
+    width: 36%;
+    color: #ffffff;
+    border-left: 4px solid #a31919;
+}
 /* Headings styling */
 h2 {
-    color: #2c3e50;
+    width: 50%;
+    text-align: center;
+    border-radius: 25px;
+    align-items: center;
+    margin-left: 10px;
+    color: #ffffff;
+    background: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(121,9,9,1) 43%, rgba(255,16,0,1) 100%);
     border-bottom: 1px solid #ccc;
     padding-bottom: 5px;
     margin-bottom: 10px;
@@ -56,4 +89,102 @@ footer {
     color: #888;
     font-size: 0.8em;
     margin-top: 20px;
+}
+/* Responsive Design */
+@media screen and  (max-width: 768px) {
+    /* Smaller devices like tablets */
+    .resume-container {
+        width: 90%;
+        padding: 15px;
+    }
+    header{
+        align-items: center;
+        /* text-align: center; */
+    }
+
+    header h1::after {
+        top: 40px; /* Aapki required positioning */
+    }
+
+    header h1 {
+        font-size: 2em; /* Yahan pe font size adjust kar sakte hain */
+    }
+
+    #displayImage {
+
+        width: 100%;
+        height: 100%;
+    }
+    .imgdiv{
+        width: 210px;
+    }
+    .content {
+        display: flex;
+    }
+    .left-section {
+        max-width: 100%;
+        font-size: 10px;
+    }
+    .right-section {
+        max-width: 100%;
+        font-size: 10px;
+    }
+}
+
+@media screen and (max-width: 912px) {
+    /* Smaller devices like mobile */
+    h1 {
+        font-size: 40px !important;
+    }
+    
+    header h1::after {
+        top: 85px; /* Aapki required positioning */
+    }
+    #displayImage {
+        margin-left: 20px;
+        width: 10vh !important;
+        height: 10vh !important;
+    }
+    .imgdiv{
+        width: 240px;
+    }
+
+    .left-section, .right-section {
+        max-width: 100%;
+        font-size: 12px !important;
+    }
+
+    h2 {
+        font-size: 15px;
+        padding: 4px;
+    } 
+}
+
+@media screen and (max-width: 480px) {
+    /* Smaller devices like mobile */
+    h1 {
+        font-size: 20px !important;
+    }
+    
+    header h1::after {
+        top: 50px; /* Aapki required positioning */
+    }
+    #displayImage {
+        margin-left: 10px;
+        width: 70px !important;
+        height: 80px !important;
+    }
+    .imgdiv{
+        width: 125px;
+    }
+
+    .left-section, .right-section {
+        max-width: 100%;
+        font-size: 5px !important;
+    }
+
+    h2 {
+        font-size: 1em;
+        padding: 4px;
+    }
 }

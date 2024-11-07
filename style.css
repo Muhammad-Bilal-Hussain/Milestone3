@@ -75,27 +75,11 @@ input::placeholder {
   button:hover {
     box-shadow: 7px 7px 20px #848485, -0px -0px 20px rgb(83, 79, 79);
   }  
-  /* output resume  */
-/* .resumeoutput{
-    margin: 1%;
-    width: 80%;
-    height: auto;
-    border-radius: 20px;
-    padding: 20px;
-    box-sizing: border-box;
-    background: #ecf0f3;
-    box-shadow: 14px 14px 20px #848485, -14px -14px 20px rgb(83, 79, 79);
-    text-align: justify;
-    background-color: rgba(479, 421, 255, 0.8);
+/* imge upload  */
+p{
+    text-align: left;
 }
-.resumeoutput h2{
- color: black;
+#college{
+    font-weight: bold;
+    color: #a31919;
 }
-#resumeContent{
-    max-width: 100%; /* Container ke width ke hisaab se text box ki maximum width set kare 
-    width: 100%;  Full width le lega apne parent container ki 
-    box-sizing: border-box;  Padding aur border ko width mein include kare 
-    overflow: hidden;  Agar content bahar jaaye, toh usse chhupa de 
-    text-align: center;
-}*/
-

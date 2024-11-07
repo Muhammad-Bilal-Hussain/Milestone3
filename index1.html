@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resume Output</title>
     <link rel="stylesheet" href="resumeStyle.css">
 </head>
@@ -9,6 +10,9 @@
     <div class="resume-container">
         <!-- Centered Name on Top -->
         <header>
+            <div class="imgdiv">
+            <img id="displayImage" alt="Profile Image" style="width: 150px; height: 150px; border-radius: 50%;" />
+        </div>
             <h1 id="displayName"></h1>
         </header>
 
@@ -19,15 +23,17 @@
                 <p id="displayAbout"></p>
                 <h2>Contact Info</h2>
                 <p id="displayContact"></p>
-                <p id="displayEmail"></p>
+                <p  id="displayEmail"></p>
                 <h2>Skills</h2>
-                <p id="displaySkils"></p>
+                <ul id="displaySkillsContainer"></ul>
+                <h2>Language</h2>
+                <ul id="displayLanguageContainer"></ul>
             </section>
 
             <!-- Right Section for Education and Experience -->
             <section class="right-section">
                 <h2>Education</h2>
-                <div id="displayEducation"></div>
+                <p id="displayEducation"></p>
 
                 <h2>Experience</h2>
                 <p id="displayExperience"></p>
